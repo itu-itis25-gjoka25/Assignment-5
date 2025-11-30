@@ -4,21 +4,75 @@
     <head>
         <title>My Web Page</title>
         <link rel="stylesheet" type="text/css" href="13_11_2025.css" />
+        <style>
+            body {
+                background-color: #FFFACD;
+            }
+            .name-id-section {
+                text-align: center;
+                margin: 30px 0;
+            }
+            .dots-line {
+                color: #FFD700;
+                letter-spacing: 3px;
+                font-size: 18px;
+                margin: 3px 0;
+            }
+            .name-text {
+                color: black;
+                font-weight: bold;
+                font-size: 28px;
+                font-style: italic;
+                margin: 3px 0;
+            }
+            .student-id-text {
+                color: black;
+                font-weight: bold;
+                font-size: 22px;
+                margin: 3px 0;
+            }
+        </style>
     </head>
 
     <body> 
         <p>
-            <strong>Introduction to Information Systems</strong>
+            <label for="userName"><strong>Enter your name:</strong></label>
+            <input type="text" id="userName" placeholder="Type here..." onkeyup="changeBackgroundColor()">
         </p>
-        <p class="centered">
-            <em>
-           Lionel Gjoka
-            <br>
-            150250932
-            </em>
+        
+        <p>
+           
         </p>
- <p class="center-icon"><a href="https://github.com/itu-itis25-gjoka25"><img src="github_icon.png" alt="github icon"></a></p>
- 
+        
+        <div class="name-id-section">
+            <div class="dots-line">• • • • • • • • •</div>
+
+            <!-- ✅ NAME WITH YELLOW OUTLINE + YELLOW GLOW -->
+            <div class="name-text"
+                 style="
+                    -webkit-text-stroke: 1px #FFD700;
+                    text-shadow: 0 0 6px #FFD700;
+                 ">
+                Lionel Gjoka
+            </div>
+
+            <div class="dots-line">• • • • • • • • •</div>
+
+            <!-- ✅ ID WITH YELLOW OUTLINE + YELLOW GLOW -->
+            <div class="student-id-text"
+                 style="
+                    -webkit-text-stroke: 1px #FFD700;
+                    text-shadow: 0 0 6px #FFD700;
+                 ">
+                150250932
+            </div>
+        </div>
+        
+        <p class="center-icon">
+            <a href="https://github.com/itu-itis25-gjoka25">
+                <img src="github_icon.png" alt="github icon">
+            </a>
+        </p>
 
         <h4>Courses that I am taking</h4>
         <ol class="border">
@@ -39,7 +93,7 @@
             <li>Apidae</li>
             <ul>
                 <li>Bombus</li>
-                   </ul>
+            </ul>
         </ul>
 
         <h1> <strong>Bees</strong> </h1>
@@ -62,7 +116,7 @@
             <tr>
                 <td>Halictidae</td>
                 <td>Halictus</td>
- </tr>
+            </tr>
             <tr>
                 <td>Colletidae</td>
                 <td>Colletes</td>
@@ -78,9 +132,16 @@
 
              This web page is right for you! I hope you enjoy it.
         </pre>
-    </body>
-    
+    
+        <script>
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = "lightblue";
+        }
+        </script>
+
+</body>
 </html>
+
 
 
 
