@@ -1,143 +1,129 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <html> 
-    <head>
-        <title>My Web Page</title>
-        <link rel="stylesheet" type="text/css" href="13_11_2025.css" />
-        <style>
-            body {
-                background-color: #FFFACD;
-            }
-            .name-id-section {
-                text-align: center;
-                margin: 30px 0;
-            }
-            .dots-line {
-                color: #FFD700;
-                letter-spacing: 3px;
-                font-size: 18px;
-                margin: 3px 0;
-            }
-            .name-text {
-                color: black;
-                font-weight: bold;
-                font-size: 28px;
-                font-style: italic;
-                margin: 3px 0;
-            }
-            .student-id-text {
-                color: black;
-                font-weight: bold;
-                font-size: 22px;
-                margin: 3px 0;
-            }
-        </style>
-    </head>
+<head>
+    <title>My Web Page</title>
+    <link rel="stylesheet" type="text/css" href="13_11_2025.css" />
+    <style>
+        body {
+            background-color: #FFFACD;
+        }
 
-    <body> 
-        <p>
-            <label for="userName"><strong>Enter your name:</strong></label>
-            <input type="text" id="userName" placeholder="Type here..." onkeyup="changeBackgroundColor()">
-        </p>
-        
-        <p>
-           
-        </p>
-        
-        <div class="name-id-section">
-            <div class="dots-line">• • • • • • • • •</div>
+        /* GitHub EXACT position from screenshot */
+        #githubLogo {
+            position: absolute;
+            width: 150px;
+            left: 60px;
+            top: 110px;  /* moved UP */
+        }
 
-            <!-- ✅ NAME WITH YELLOW OUTLINE + YELLOW GLOW -->
-            <div class="name-text"
-                 style="
-                    -webkit-text-stroke: 1px #FFD700;
-                    text-shadow: 0 0 6px #FFD700;
-                 ">
-                Lionel Gjoka
-            </div>
+        /* Name + ID exactly above & slightly right of logo */
+        #nameBlock {
+            position: absolute;
+            left: 240px;   /* moved LEFT */
+            top: 60px;     /* moved UP a lot */
+            text-align: center;
+            width: 180px;
+        }
 
-            <div class="dots-line">• • • • • • • • •</div>
+        .dots-line {
+            color: #FFD700;
+            letter-spacing: 3px;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
 
-            <!-- ✅ ID WITH YELLOW OUTLINE + YELLOW GLOW -->
-            <div class="student-id-text"
-                 style="
-                    -webkit-text-stroke: 1px #FFD700;
-                    text-shadow: 0 0 6px #FFD700;
-                 ">
-                150250932
-            </div>
+        .name-text {
+            color: black;
+            font-weight: bold;
+            font-size: 26px;
+            font-style: italic;
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+
+        .student-id-text {
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+
+<body> 
+
+    <p>
+        <label for="userName"><strong>Enter your name:</strong></label>
+        <input type="text" id="userName" placeholder="Type here..." onkeyup="changeBackgroundColor()">
+    </p>
+
+    <!-- GitHub Logo -->
+    <img id="githubLogo" src="github_icon.png" alt="github icon">
+
+    <!-- Name + ID Block -->
+    <div id="nameBlock">
+        <div class="dots-line">• • • • • • • • •</div>
+
+        <div class="name-text"
+             style="-webkit-text-stroke: 1px #FFD700; text-shadow: 0 0 6px #FFD700;">
+            Lionel Gjoka
         </div>
-        
-        <p class="center-icon">
-            <a href="https://github.com/itu-itis25-gjoka25">
-                <img src="github_icon.png" alt="github icon">
-            </a>
-        </p>
 
-        <h4>Courses that I am taking</h4>
-        <ol class="border">
+        <div class="dots-line">• • • • • • • • •</div>
+
+        <div class="student-id-text"
+             style="-webkit-text-stroke: 1px #FFD700; text-shadow: 0 0 6px #FFD700;">
+            150250932
+        </div>
+    </div>
+
+    <h4 style="margin-top: 300px;">Courses that I am taking</h4>
+
+    <ol class="border">
         <li><strong>BBF101E - Introduction to Information Systems</strong></li>
         <li>BBF102E - Linear Algebra and Applications</li>
         <li>FIZ101E - Physics I</li>
         <li>FIZ101EL - Physics I laboratory</li>
         <li>MAT103E - Mathematics I</li>
-        </ol>
-    
-        <p>The Universe of Bees</p>
+    </ol>
 
-        <ul>
-            <li>Apis Mellifera</li>
-            <li>Agapostemon</li>
-            <li>Halictus</li>
-            <li>Colletes</li>
-            <li>Apidae</li>
-            <ul>
-                <li>Bombus</li>
-            </ul>
-        </ul>
+    <p>The Universe of Bees</p>
 
-        <h1> <strong>Bees</strong> </h1>
-        <p> <img src="bees.jpg"> </p>
-        <p> <a href="https://en.wikipedia.org/wiki/Bee">Click here for more information</a></p>
+    <ul>
+        <li>Apis Mellifera</li>
+        <li>Agapostemon</li>
+        <li>Halictus</li>
+        <li>Colletes</li>
+        <li>Apidae</li>
+        <ul><li>Bombus</li></ul>
+    </ul>
 
-        <table>
-            <tr class="table-th">
-                <th>Family</th>
-                <th>Genus</th>
-            </tr>
-            <tr>
-                <td>Apidae</td>
-                <td>Apis</td>
-            </tr>
-            <tr>
-                <td>Halictidae</td>
-                <td>Agapostemon</td>
-            </tr>
-            <tr>
-                <td>Halictidae</td>
-                <td>Halictus</td>
-            </tr>
-            <tr>
-                <td>Colletidae</td>
-                <td>Colletes</td>
-            </tr>
-            <tr>
-                <td>Apidae</td>
-                <td>Bombus</td>
-            </tr>
-        </table>
+    <h1><strong>Bees</strong></h1>
+    <p><img src="bees.jpg"></p>
+    <p><a href="https://en.wikipedia.org/wiki/Bee">Click here for more information</a></p>
 
-        <pre> 
-                           Are you a beekeeper?
+    <table>
+        <tr class="table-th"><th>Family</th><th>Genus</th></tr>
+        <tr><td>Apidae</td><td>Apis</td></tr>
+        <tr><td>Halictidae</td><td>Agapostemon</td></tr>
+        <tr><td>Halictidae</td><td>Halictus</td></tr>
+        <tr><td>Colletidae</td><td>Colletes</td></tr>
+        <tr><td>Apidae</td><td>Bombus</td></tr>
+    </table>
 
-             This web page is right for you! I hope you enjoy it.
-        </pre>
-    
-        <script>
-        function changeBackgroundColor() {
-            document.body.style.backgroundColor = "lightblue";
-        }
-        </script>
+    <pre>
+                       Are you a beekeeper?
+
+         This web page is right for you! I hope you enjoy it.
+    </pre>
+
+    <script>
+    function changeBackgroundColor() {
+        document.body.style.backgroundColor = "lightblue";
+    }
+    </script>
 
 </body>
 </html>
