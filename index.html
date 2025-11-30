@@ -9,19 +9,18 @@
             background-color: #FFFACD;
         }
 
-        /* GitHub EXACT position from screenshot */
+        /* EXACT screenshot positioning */
         #githubLogo {
             position: absolute;
             width: 150px;
             left: 60px;
-            top: 110px;  /* moved UP */
+            top: 110px;
         }
 
-        /* Name + ID exactly above & slightly right of logo */
         #nameBlock {
             position: absolute;
-            left: 240px;   /* moved LEFT */
-            top: 60px;     /* moved UP a lot */
+            left: 240px;
+            top: 60px;
             text-align: center;
             width: 180px;
         }
@@ -62,19 +61,29 @@
     <!-- GitHub Logo -->
     <img id="githubLogo" src="github_icon.png" alt="github icon">
 
-    <!-- Name + ID Block -->
+    <!-- Name + ID EXACT layout -->
     <div id="nameBlock">
         <div class="dots-line">• • • • • • • • •</div>
 
+        <!-- NAME (black text + yellow outline + glow) -->
         <div class="name-text"
-             style="-webkit-text-stroke: 1px #FFD700; text-shadow: 0 0 6px #FFD700;">
+             style="
+                -webkit-text-stroke: 1px #FFD700;
+                -webkit-text-fill-color: black;
+                text-shadow: 0 0 6px #FFD700;
+             ">
             Lionel Gjoka
         </div>
 
         <div class="dots-line">• • • • • • • • •</div>
 
+        <!-- ID (black text + yellow outline + glow) -->
         <div class="student-id-text"
-             style="-webkit-text-stroke: 1px #FFD700; text-shadow: 0 0 6px #FFD700;">
+             style="
+                -webkit-text-stroke: 1px #FFD700;
+                -webkit-text-fill-color: black;
+                text-shadow: 0 0 6px #FFD700;
+             ">
             150250932
         </div>
     </div>
@@ -127,8 +136,3 @@
 
 </body>
 </html>
-
-
-
-
-
