@@ -1,94 +1,117 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-<html> 
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>My Web Page</title>
+
     <link rel="stylesheet" type="text/css" href="13_11_2025.css" />
+
     <style>
         body {
             background-color: #FFFACD;
+            font-family: Arial, sans-serif;
         }
 
-        /* EXACT screenshot positioning */
-        #githubLogo {
-            position: absolute;
-            width: 150px;
-            left: 60px;
-            top: 110px;
-        }
-
+        /* NAME + ID STYLE */
         #nameBlock {
             position: absolute;
-            left: 240px;
-            top: 60px;
+            left: 260px;
+            top: 140px;
             text-align: center;
-            width: 180px;
+            width: 260px;
         }
 
         .dots-line {
             color: #FFD700;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             font-size: 16px;
             margin: 0;
             padding: 0;
         }
 
-        .name-text {
-            color: black;
-            font-weight: bold;
-            font-size: 26px;
-            font-style: italic;
-            margin-top: 4px;
-            margin-bottom: 4px;
+     .name-text {
+    color: #1a1a00;                        /* BLACK with a slight YELLOW tint */
+    font-weight: 800;                      /* thick black fill */
+    font-size: 32px;
+    font-style: italic;
+
+    -webkit-text-stroke: 1.2px #FFD700;    /* yellow outline */
+
+    text-shadow:
+        0 0 3px #FFD966,                   /* soft warm yellow glow */
+        0 0 6px #FFD966;
+
+    margin: 5px 0;
+}
+
+.student-id-text {
+    color: #1a1a00;                        /* slightly warm black */
+    font-weight: 800;                      /* thick fill */
+    font-size: 26px;
+
+    -webkit-text-stroke: 1.2px #FFD700;    /* yellow outline */
+
+    text-shadow:
+        0 0 3px #FFD966,
+        0 0 6px #FFD966;
+
+    margin: 5px 0;
+}
+
+
+
+
+
+
+
+
+        /* LOGO FIXED ABOVE THE COURSES HEADER */
+        #githubLogo {
+            width: 150px;
+            margin-left: 10px;
+            margin-top: 320px;   /* THIS PLACES IT ABOVE THE COURSES HEADER */
+            display: block;
         }
 
-        .student-id-text {
-            color: black;
-            font-weight: bold;
-            font-size: 20px;
-            margin-top: 2px;
+        #colorBtn {
+            padding: 6px 18px;
+            font-size: 14px;
+            background-color: red;
+            border: 1px solid black;
+            cursor: pointer;
+            margin-right: 15px;
         }
+
+        #topBar {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
     </style>
 </head>
 
-<body> 
+<body>
 
-    <p>
+    <!-- Top Row -->
+    <div id="topBar">
+        <button id="colorBtn">Change Colors!</button>
         <label for="userName"><strong>Enter your name:</strong></label>
         <input type="text" id="userName" placeholder="Type here..." onkeyup="changeBackgroundColor()">
-    </p>
-
-    <!-- GitHub Logo -->
-    <img id="githubLogo" src="github_icon.png" alt="github icon">
-
-    <!-- Name + ID EXACT layout -->
-    <div id="nameBlock">
-        <div class="dots-line">• • • • • • • • •</div>
-
-        <!-- NAME (black text + yellow outline + glow) -->
-        <div class="name-text"
-             style="
-                -webkit-text-stroke: 1px #FFD700;
-                -webkit-text-fill-color: black;
-                text-shadow: 0 0 6px #FFD700;
-             ">
-            Lionel Gjoka
-        </div>
-
-        <div class="dots-line">• • • • • • • • •</div>
-
-        <!-- ID (black text + yellow outline + glow) -->
-        <div class="student-id-text"
-             style="
-                -webkit-text-stroke: 1px #FFD700;
-                -webkit-text-fill-color: black;
-                text-shadow: 0 0 6px #FFD700;
-             ">
-            150250932
-        </div>
     </div>
 
-    <h4 style="margin-top: 300px;">Courses that I am taking</h4>
+    <!-- Name + ID -->
+    <div id="nameBlock">
+        <div class="dots-line">• • • • • • • • •</div>
+        <div class="name-text">Lionel Gjoka</div>
+        <div class="dots-line">• • • • • • • • •</div>
+        <div class="student-id-text">150250932</div>
+    </div>
+
+    <!-- ⭐ LOGO ABOVE THE COURSES TITLE ⭐ -->
+    <img id="githubLogo" src="github_icon.png" alt="github icon">
+
+    <!-- NOW THE COURSES HEADER COMES DIRECTLY BELOW THE LOGO -->
+    <h4 style="margin-left: 10px;">Courses that I am taking</h4>
 
     <ol class="border">
         <li><strong>BBF101E - Introduction to Information Systems</strong></li>
@@ -98,7 +121,9 @@
         <li>MAT103E - Mathematics I</li>
     </ol>
 
-    <p>The Universe of Bees</p>
+    <h1 style="color: red;"><strong>Bees</strong></h1>
+
+    <p><strong>The Universe of Bees</strong></p>
 
     <ul>
         <li>Apis Mellifera</li>
@@ -109,8 +134,8 @@
         <ul><li>Bombus</li></ul>
     </ul>
 
-    <h1><strong>Bees</strong></h1>
     <p><img src="bees.jpg"></p>
+
     <p><a href="https://en.wikipedia.org/wiki/Bee">Click here for more information</a></p>
 
     <table>
@@ -129,10 +154,24 @@
     </pre>
 
     <script>
-    function changeBackgroundColor() {
-        document.body.style.backgroundColor = "lightblue";
-    }
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = "#FFFACD";
+        }
+
+        const button = document.getElementById("colorBtn");
+        const colors = ["red", "blue", "green", "gray"];
+        let index = 0;
+
+        button.addEventListener("click", () => {
+            button.style.backgroundColor = colors[index];
+            index = (index + 1) % colors.length;
+        });
     </script>
 
 </body>
 </html>
+
+
+
+
+
